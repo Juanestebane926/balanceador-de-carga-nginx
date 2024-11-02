@@ -1,0 +1,26 @@
+config:
+  target: "http://localhost"  # URL del balanceador
+  phases:
+    - duration: 60
+      arrivalRate: 5
+      name: "Fase de calentamiento"
+    - duration: 120
+      arrivalRate: 10
+      rampTo: 50
+      name: "Incremento gradual de carga"
+    - duration: 180
+      arrivalRate: 50
+      name: "Prueba de carga sostenida"
+  defaults:
+    headers:
+      User-Agent: "Artillery Load Test"
+      Content-Type: "application/json"
+
+scenarios:
+  - name: "Prueba de listado de productos"
+    flow:
+      - get:
+          url: "/api/listarProductos"
+          expect:
+            - statusCode: 200
+      - think: 1  # Pausa de 1 segundo entre requests
