@@ -1,22 +1,45 @@
 services:
   # Aplicación Node.js en dos instancias
   app1:
-    build:
-      context: ./backend
-      dockerfile: Dockerfile
+    image: jpcastano/cineplus:backendv1
     environment:
       - PORT=3000
     networks:
       - loadBalancer
 
   app2:
-    build:
-      context: ./backend
-      dockerfile: Dockerfile
+    image: jpcastano/cineplus:backendv1
     environment:
       - PORT=3001
     networks:
       - loadBalancer
+
+  app3:
+    image: jpcastano/cineplus:backendv1
+    environment:
+      - PORT=3002
+    networks:
+      - loadBalancer
+
+  app4:
+    image: jpcastano/cineplus:backendv1
+    environment:
+      - PORT=3003
+    networks:
+      - loadBalancer
+
+  app5:
+    image: jpcastano/cineplus:backendv1
+    environment:
+      - PORT=3004
+    networks:
+      - loadBalancer
+
+  front:
+    image: jpcastano/cineplus:apienlocalhost80
+    ports:
+      - 6969:80
+
 
   # Balanceador de carga Nginx
   nginx:
