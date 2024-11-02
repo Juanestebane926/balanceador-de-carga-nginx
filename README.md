@@ -14,7 +14,7 @@ Sigue estos pasos para clonar el repositorio e iniciar el proyecto en tu máquin
 1. **Clona el repositorio**:
 
    ```bash
-   git clone https://github.com/Juanestebane926/balanceador-de-carga-nginx.git
+   git clone https://github.com/Juanestebane926/balanceador-de-carga-nginx
    ```
 
 2. **Ingresa al directorio del proyecto**:
@@ -27,7 +27,7 @@ Sigue estos pasos para clonar el repositorio e iniciar el proyecto en tu máquin
 
    ```bash
    
-   docker-compose up -d
+   docker-compose up
    ```
 
    Esto descargará las imágenes necesarias y levantará los contenedores en segundo plano.
@@ -36,16 +36,15 @@ Sigue estos pasos para clonar el repositorio e iniciar el proyecto en tu máquin
 
    Abre tu navegador y dirígete a [http://localhost/api/listarProductos](http://localhost/api/listarProductos) para verificar que el balanceador de carga esté funcionando.
 
-   Aquí tienes el `README.md` actualizado con la información sobre cómo cambiar la cantidad de servidores en el balanceador de carga:
 
 ## Configurar la Cantidad de Servidores
 
 Para ajustar la cantidad de servidores que el balanceador de carga NGINX usará, edita el archivo `nginx.conf` y comenta o descomenta las líneas correspondientes a los servidores según sea necesario.
 
-1. Abre el archivo `nginx.conf` ubicado en el directorio `nginx` (o donde esté en tu proyecto):
+1. Abre el archivo `nginx.conf`
 
    ```bash
-   nano nginx/nginx.conf
+   nginx/nginx.conf
    ```
 
 2. Comenta (`#`) los servidores que no desees utilizar o descomenta los que quieras activar. Ejemplo:
@@ -65,7 +64,7 @@ Para ajustar la cantidad de servidores que el balanceador de carga NGINX usará,
 
    ```bash
    docker-compose down
-   docker-compose up -d
+   docker-compose up
    ```
 
 
