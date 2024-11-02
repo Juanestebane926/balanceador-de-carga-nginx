@@ -37,6 +37,13 @@ Sigue estos pasos para clonar el repositorio e iniciar el proyecto en tu máquin
    Abre tu navegador y dirígete a [http://localhost/api/listarProductos](http://localhost/api/listarProductos) para verificar que el balanceador de carga esté funcionando.
 
 
+## Frontend
+
+El proyecto incluye un servicio de frontend accesible en el puerto `6969`. Este servicio está configurado para consumir las APIs expuestas por los servicios de backend (`app`) a través del balanceador de carga de NGINX.
+
+- **Acceso al Frontend**: [http://localhost:6969](http://localhost:6969)
+
+
 ## Configurar la Cantidad de Servidores
 
 Para ajustar la cantidad de servidores que el balanceador de carga NGINX usará, edita el archivo `nginx.conf` y comenta o descomenta las líneas correspondientes a los servidores según sea necesario.
