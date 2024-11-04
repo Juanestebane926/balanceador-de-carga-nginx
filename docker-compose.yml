@@ -40,6 +40,11 @@ services:
     ports:
       - 6969:80
 
+  VMfront:
+    image: jpcastano/cineplus:apienvm
+    ports:
+      - 9696:80
+
 
   # Balanceador de carga Nginx
   nginx:

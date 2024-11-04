@@ -43,6 +43,9 @@ El proyecto incluye un servicio de frontend accesible en el puerto `6969`. Este 
 
 - **Acceso al Frontend**: [http://localhost:6969](http://localhost:6969)
 
+si estás usando un entorno aislado de pruebas, debes configurar la maquina virtual que esté hosteando los contenedores para que tenga la ip `196.169.60.3` para que funcione correctamente y usar el servicio de front servido en el puerto `9696` en vez del normal.
+
+- **Acceso al Frontend con VM**: [http://192.168.60.3:9696](http://192.168.60.3:9696)
 
 ## Configurar la Cantidad de Servidores
 
