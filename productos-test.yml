@@ -24,3 +24,19 @@ scenarios:
           expect:
             - statusCode: 200
       - think: 1  # Pausa de 1 segundo entre requests
+
+  - name: "Crear usuario con datos únicos"
+    flow:
+      - loop:
+        - post:
+            url: "/api/crearUsuario"
+            json:
+              email: "usuario{{ $loopCount }}@ejemplo.com"
+              password: "password123"
+            expect:
+              - statusCode: 201
+        - think: 1  # Pausa de 1 segundo entre requests
+
+# graficar tests: 
+# artillery run -o report.json productos-test.yml
+# artillery report report.json
