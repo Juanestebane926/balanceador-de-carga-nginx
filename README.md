@@ -85,3 +85,16 @@ Para detener y eliminar los contenedores, ejecuta:
 ```bash
 docker-compose down
 ```
+
+## Ambiente de pruebas en vagrant
+
+Para mayor facilidad a la hora de correr el proyecto y sus pruebas hemos creado una vagrant box con todo lo necesario, no olvidar la creacion de una carpeta "Sync" en la ubicacion del vagrantfile para su correcta ejecución.
+```bash
+Vagrant.configure("2") do |config|
+  config.vm.box = "serviciostele/test"
+  config.vm.box_version = "1.0"
+  config.vm.network :private_network, ip: "192.168.60.3"    
+  config.vm.synced_folder "Sync/", "/home/vagrant/Sync"
+end
+```
+
